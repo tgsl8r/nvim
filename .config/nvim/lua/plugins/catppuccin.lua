@@ -1,11 +1,4 @@
 return {
-  -- Activate catpuccin
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
-    },
-  },
 
   -- catppuccin options
   {
