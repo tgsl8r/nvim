@@ -1,4 +1,11 @@
 return {
+  -- LazyVim config
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight",
+    },
+  },
   -- configure dashboard
   {
     "nvimdev/dashboard-nvim",
