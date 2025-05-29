@@ -4,5 +4,6 @@
 require('lazy').setup({
     require 'usr.plugins.colour',
     require 'usr.plugins.utils',
-    require 'usr.plugins.ui'
+    require 'usr.plugins.ui',
+    require 'usr.plugins.code',
 })
