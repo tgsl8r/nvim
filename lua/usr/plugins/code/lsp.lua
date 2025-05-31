@@ -17,7 +17,7 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ruff", }, -- Add as needed
+        ensure_installed = { "lua_ls", "ruff", "rust-analyzer", "cpptools", "codelldb", "biome" }, -- Add as needed
       })
 
       require("mason-lspconfig").setup_handlers({
