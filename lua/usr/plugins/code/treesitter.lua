@@ -15,5 +15,16 @@ return {
         indent = { enable = true },
       })
     end
-  }
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      enable = true,
+      max_lines = 3,
+      multiline_threshold = 20,
+      trim_scope = 'outer',
+      mode = 'cursor',
+    },
+  },
 }
