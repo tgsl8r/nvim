@@ -1,0 +1,36 @@
+{
+  "plugins": {
+    "gitsigns.nvim": {
+      "rev": "20ad441",
+      "src": "git@github.com:lewis6991/gitsigns.nvim.git"
+    },
+    "gruvbox-flat.nvim": {
+      "rev": "1dc35c8",
+      "src": "git@github.com:eddyekofo94/gruvbox-flat.nvim"
+    },
+    "gruvbox-material": {
+      "rev": "834dbf2",
+      "src": "git@github.com:sainnhe/gruvbox-material.git"
+    },
+    "mason.nvim": {
+      "rev": "ad7146a",
+      "src": "git@github.com:mason-org/mason.nvim.git"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "git@github.com:nvim-treesitter/nvim-treesitter.git"
+    },
+    "nvim-treesitter-textobjects": {
+      "rev": "5ca4aaa",
+      "src": "git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git"
+    },
+    "snacks.nvim": {
+      "rev": "6f60105",
+      "src": "git@github.com:folke/snacks.nvim"
+    },
+    "which-key.nvim": {
+      "rev": "3aab214",
+      "src": "git@github.com:folke/which-key.nvim"
+    }
+  }
+}
