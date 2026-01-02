@@ -1,3 +1,6 @@
+-- plugins.lua
+-- Install and import the config of plugins
+
 vim.pack.add({
   -- UI
 	{ src = "git@github.com:eddyekofo94/gruvbox-flat.nvim" },
@@ -6,8 +9,11 @@ vim.pack.add({
   -- Treesitter
 	{ src = "git@github.com:nvim-treesitter/nvim-treesitter.git" },
 	{ src = "git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git" },
-  -- LSP
-	{ src = "git@github.com:mason-org/mason.nvim.git" },
   -- Code
 	{ src = "git@github.com:lewis6991/gitsigns.nvim.git" },
 })
+
+-- Utils
+require("usr.plugins.utils")
+-- Language tools
+require("usr.plugins.code")
