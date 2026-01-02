@@ -2,11 +2,7 @@
 -- ░░█░░█░█░░█░░░█░░░░░█░░░█░█░█▀█░
 -- ░▀▀▀░▀░▀░▀▀▀░░▀░░▀░░▀▀▀░▀▀▀░▀░▀░
 
--- Install plugins --
-require("usr.install")
-
--- Plugin config
-require("usr.plugins")
 
 -- Core --
 require("usr.core")
+-- Contains basic config, keymaps and installs and configures plugins
