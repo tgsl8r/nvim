@@ -20,7 +20,6 @@ vim.pack.add({
     { src = "git@github.com:williamboman/mason-lspconfig.nvim" },
 })
 
-
 ------------------------------------------------------------
 -- Mason
 ------------------------------------------------------------
@@ -59,3 +58,14 @@ local function on_attach(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 end
 
+------------------------------------------------------------
+-- Load config and enable servers
+------------------------------------------------------------
+
+for _, server in ipairs(servers) do
+  vim.lsp.config(server, {
+    on_attach = on_attach,
+  })
+end
+
+vim.lsp.enable(servers)
