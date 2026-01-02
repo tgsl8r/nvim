@@ -20,3 +20,15 @@ vim.pack.add({
     { src = "git@github.com:williamboman/mason-lspconfig.nvim" },
 })
 
+
+------------------------------------------------------------
+-- Mason
+------------------------------------------------------------
+
+require('mason').setup()
+
+require('mason-lspconfig').setup({
+  ensure_installed = servers,
+  automatic_installation = true,
+})
+
