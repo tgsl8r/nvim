@@ -16,8 +16,12 @@ whichkey.setup({
 		{ "]", group = "next" },
 		{ "g", group = "goto" },
 		{ "<leader>f", group = "files" },
-		{ "<leader>w", group = "windows" },
-		{ "<leader>b", group = "buffers" },
+        { "<leader>w", group = "windows", expand = function()
+            return require("which-key.extras").expand.win()
+        end },
+        { "<leader>b", group = "buffers", expand = function()
+            return require("which-key.extras").expand.buf()
+        end },
 		{ "<leader>s", group = "search/show" },
 		{ "<leader>c", group = "code" },
 		{ "<leader>g", group = "git" },
