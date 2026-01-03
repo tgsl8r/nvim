@@ -11,35 +11,32 @@ vim.pack.add({
 })
 
 ------------------------------------------------------------
--- Load snippets
-------------------------------------------------------------
-
-vim.snippet.loaders.from_vscode.lazy_load()
-
-------------------------------------------------------------
 -- Configure blink
 ------------------------------------------------------------
 
 local blink = require("blink.cmp")
 
 blink.setup({
-  sources = {
-    default = { "lsp", "path", "snippets", "buffer" },
-  },
-  keymap = {
-    ["<Tab>"] = {
-      "snippet_forward",
-      "select_next",
-      "fallback",
+    sources = {
+        default = { "lsp", "path", "snippets", "buffer" },
     },
-    ["<S-Tab>"] = {
-      "snippet_backward",
-      "select_prev",
-      "fallback",
+    fuzzy = {
+        implementation = "rust",
     },
-    ["<CR>"] = {
-      "accept",
-      "fallback",
+    keymap = {
+        ["<Tab>"] = {
+            "snippet_forward",
+            "select_next",
+            "fallback",
+        },
+        ["<S-Tab>"] = {
+            "snippet_backward",
+            "select_prev",
+            "fallback",
+        },
+        ["<CR>"] = {
+            "accept",
+            "fallback",
+        },
     },
-  },
 })
