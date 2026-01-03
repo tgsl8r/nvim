@@ -1,5 +1,3 @@
-require("usr.core.color")
 require("usr.core.options")
-require("usr.plugins")
+require("usr.core.plugins")
 require("usr.core.keymaps")
-require("usr.core.lsp")
