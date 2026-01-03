@@ -17,7 +17,6 @@ vim.pack.add({
 local blink = require("blink.cmp")
 
 blink.setup({
-    version = "*",
     sources = {
         default = { "lsp", "path", "snippets", "buffer" },
     },
