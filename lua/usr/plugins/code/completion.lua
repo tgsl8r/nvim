@@ -17,11 +17,12 @@ vim.pack.add({
 local blink = require("blink.cmp")
 
 blink.setup({
+    version = "*",
     sources = {
         default = { "lsp", "path", "snippets", "buffer" },
     },
     fuzzy = {
-        implementation = "rust",
+        implementation = "prefer_rust_with_warning",
     },
     keymap = {
         ["<Tab>"] = {
