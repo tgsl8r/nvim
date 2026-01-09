@@ -84,9 +84,14 @@ local bindings = {
     { "<leader>sH",  function() Snacks.picker.highlights() end, desc = "Highlights" },
 
     -- diags / code
-    { "<leader>cR",  function() Snacks.rename.rename_file() end, desc = "Rename File" },
+    { "<leader>ca",  vim.lsp.buf.code_action, desc = "Code Actions" },
+    { "<leader>cf",  function() vim.lsp.buf.format({ async = true }) end, desc = "Format Buffer" },
+    { "<leader>cr",  function() Snacks.rename.rename_file() end, desc = "Rename File" },
     { "<leader>cd",  vim.diagnostic.open_float, desc = "Line Diagnostics" },
-    { "<leader>cD",   function() vim.diagnostic.open_float(nil, { border = "rounded" }) vim.diagnostic.open_float() end, desc = "Diagnostics {focused)" },
+    { "<leader>cD",  function() vim.diagnostic.open_float(nil, { border = "rounded" }) vim.diagnostic.open_float() end, desc = "Diagnostics {focused)" },
+    { "<leader>cl",  vim.diagnostic.setloclist, desc = "Add Diag to List" },
+    { "<leader>ck",  vim.lsp.buf.signature_help, desc = "Signature Help" }, -- TODO: Insert mode bind for this
+    { "<leader>cK",  vim.lsp.buf.hover, desc = "Hover" },
     { "]d",          diagnostic_goto(true), desc = "Next Diagnostic" },
     { "[d",          diagnostic_goto(false), desc = "Prev Diagnostic" },
     { "]e",          diagnostic_goto(true, "ERROR"), desc = "Next Error" },
