@@ -31,15 +31,3 @@ require('mason-lspconfig').setup({
   ensure_installed = servers,
   automatic_installation = true,
 })
-
-------------------------------------------------------------
--- Load config and enable servers
-------------------------------------------------------------
-
-for _, server in ipairs(servers) do
-  vim.lsp.config(server, {
-    on_attach = on_attach,
-  })
-end
-
-vim.lsp.enable(servers)
