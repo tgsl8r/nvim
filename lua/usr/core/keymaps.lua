@@ -179,6 +179,12 @@ local bindings = {
     { "gco",         "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", desc = "Add Comment Below" },
     { "gcO",         "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", desc = "Add Comment Above" },
 
+    -- Tests
+    { "<leader>tn", function() require("neotest").run.run() end, desc = "Run nearest test" },
+    { "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run all tests in file" },
+    { "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Toggle test summary" },
+    { "<leader>to", function() require("neotest").output_panel.toggle() end, desc = "Toggle test output" },
+
     -- Utils
     { "<leader>uK",  "<cmd>norm! K<cr>", desc = "Keywordprg" },
     { "<leader>ur",  "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", desc = "Redraw / Clear hlsearch / Diff Update" },
