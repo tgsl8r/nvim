@@ -1,15 +1,12 @@
--- lsp.lua
--- LSP configuration
+-- dap.lua
+-- DAP configuration
 
 ------------------------------------------------------------
--- Servers
+-- Adapters
 ------------------------------------------------------------
 
-local servers = {
-    "clangd",
-    "basedpyright",
-    "lua_ls",
-    "ruff",
+local adapters = {
+    "python",
 }
 
 ------------------------------------------------------------
@@ -17,20 +14,14 @@ local servers = {
 ------------------------------------------------------------
 
 vim.pack.add({
-    { src = "git@github.com:neovim/nvim-lspconfig" },
-    { src = "git@github.com:williamboman/mason.nvim" },
-    { src = "git@github.com:williamboman/mason-lspconfig.nvim" },
-    { src = "git@github.com:WhoIsSethDaniel/mason-tool-installer.nvim" },
+    { src = "git@github.com:mfussenegger/nvim-dap" },
+    { src = "git@github.com:jay-babu/mason-nvim-dap.nvim" },
 })
 
 ------------------------------------------------------------
 -- Mason
 ------------------------------------------------------------
 
-require('mason').setup()
-
-require('mason-lspconfig').setup()
-
-require('mason-tool-installer').setup({
-    ensure_installed = servers
+require('mason-nvim-dap').setup({
+    ensure_installed = adapters
 })
