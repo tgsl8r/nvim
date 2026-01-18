@@ -22,9 +22,27 @@ vim.pack.add({
 })
 
 ------------------------------------------------------------
--- Mason
+-- Configure and setup
 ------------------------------------------------------------
 
 require('mason-nvim-dap').setup({
-    ensure_installed = adapters
+    ensure_installed = adapters,
+    handlers = {
+        function(config)
+            -- Default adapter config
+            require('mason-nvim-dap').default_setup(config)
+        end,
+        -- Custom config
+        -- python = function(config)
+        --     config.adapters = {
+        --      type = "executable",
+        --      command = "/usr/bin/python3",
+        --      args = {
+        --       "-m",
+        --       "debugpy.adapter",
+        --      },
+        --     }
+        --     require('mason-nvim-dap').default_setup(config)
+        -- end,
+    },
 })
