@@ -136,6 +136,45 @@ local bindings = {
     { "<leader>ss",  function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
     { "<leader>sS",  function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
 
+    -- Debug
+    {
+        "<leader>ds",
+        function()
+            local widgets = require("dap.ui.widgets")
+            widgets.centered_float(widgets.scopes, { border = "rounded" })
+        end,
+        desc = "DAP Scopes",
+    },
+    {
+        "<leader>dh",
+        function() require("dap.ui.widgets").hover(nil, { border = "rounded" }) end,
+        desc = "DAP Hover",
+    },
+    {
+        "<leader>dr",
+        function() require("dap").repl.toggle(nil, "tab split") end,
+        desc = "DAP REPL",
+    },
+    -- TODO: Alt keybinds for below?
+    { "<F4>", "<CMD>DapTerminate<CR>", desc = "DAP Terminate" },
+    { "<F5>", "<CMD>DapContinue<CR>", desc = "DAP Continue" },
+    { "<F6>", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
+    { "<F9>", "<CMD>DapToggleBreakpoint<CR>", desc = "Toggle Breakpoint" },
+    { "<F10>", "<CMD>DapStepOver<CR>", desc = "Step Over" },
+    { "<F11>", "<CMD>DapStepInto<CR>", desc = "Step Into" },
+    { "<F12>", "<CMD>DapStepOut<CR>", desc = "Step Out" },
+    { "<F17>", function() require("dap").run_last() end, desc = "Run Last" },
+    {
+        "<F21>",
+        function()
+            vim.ui.input(
+                { prompt = "Breakpoint condition: " },
+                function(input) require("dap").set_breakpoint(input) end
+            )
+        end,
+        desc = "Conditional Breakpoint",
+    },
+
     -- Comments
     { "gco",         "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", desc = "Add Comment Below" },
     { "gcO",         "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", desc = "Add Comment Above" },
