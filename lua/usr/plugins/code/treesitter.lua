@@ -4,6 +4,12 @@ if not treesitter_status then
 	return
 end
 
+local treesitter_context_status, treesitter_context = pcall(require, "treesitter-context")
+if not treesitter_context_status then
+	print("Couldn't load treesitter")
+	return
+end
+
 treesitter.setup({
 	highlight = {
 		enable = true,
@@ -34,14 +40,16 @@ treesitter.setup({
 		"dockerfile",
 		"gitignore",
 		"yaml",
-    "toml",
+        "toml",
 		"html",
 		"css",
 		"javascript",
 		"typescript",
 		"python",
-    "c",
-    "cpp",
+        "c",
+        "cpp",
 	},
 	auto_install = true,
 })
+
+treesitter_context.setup()
