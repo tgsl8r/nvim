@@ -1,14 +1,13 @@
--- Colorscheme options
+-- Configure Gruvbox-flat
 -- vim.g.gruvbox_material_background = "soft"
 vim.g.gruvbox_flat_style = "dark"
 vim.g.gruvbox_italic_comments = false
 vim.g.gruvbox_italic_keywords = false
 
--- Set colourscheme
-local colorscheme = "gruvbox-flat"
-local colorscheme_status, _ = pcall(vim.cmd.colorscheme, colorscheme)
-if not colorscheme_status then
-	print("Colorscheme " .. colorscheme .. " not found!")
+-- Load and configure Bamboo
+local bamboo_status, bamboo = pcall(require, "bamboo")
+if not bamboo_status then
+	print("Couldn't load bamboo")
 	return
 end
 
