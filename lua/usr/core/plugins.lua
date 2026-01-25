@@ -20,6 +20,10 @@ vim.pack.add({
 	{ src = "git@github.com:nvim-treesitter/nvim-treesitter-context.git" },
   -- Code
 	{ src = "git@github.com:lewis6991/gitsigns.nvim.git" },
+  -- Editing
+	{ src = "git@github.com:nvim-mini/mini.ai" },
+	{ src = "git@github.com:nvim-mini/mini.surround" },
+
 })
 
 -- Utils
