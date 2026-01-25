@@ -1,6 +1,6 @@
 local snacks_status, snacks = pcall(require, "snacks")
 if not snacks_status then
-	print("Couldn't load which-key")
+	print("Couldn't load snacks")
 	return
 end
 
