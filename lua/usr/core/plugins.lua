@@ -2,8 +2,9 @@
 -- Install and import the config of plugins
 
 vim.pack.add({
-  -- libs
+  -- deps
     { src = "git@github.com:nvim-lua/plenary.nvim.git" },
+    { src = "git@github.com:nvim-tree/nvim-web-devicons" },
   -- UI
 	{ src = "git@github.com:folke/snacks.nvim" },
 	{ src = "git@github.com:folke/which-key.nvim" },
