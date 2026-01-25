@@ -33,6 +33,15 @@ local bindings = {
     { "<leader>fc",  function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
     { "<leader>fn",  "<cmd>enew<cr>", desc = "New File" },
 
+    -- tabs
+    {"<leader><tab><tab>", "<cmd>tabnew<cr>", desc = "New Tab" },
+    {"<leader><tab>]", "<cmd>tabnext<cr>", desc = "Next Tab" },
+    {"<leader><tab>[", "<cmd>tabprevious<cr>", desc = "Previous Tab" },
+    {"<leader><tab>f", "<cmd>tabfirst<cr>", desc = "First Tab" },
+    {"<leader><tab>l", "<cmd>tablast<cr>", desc = "Last Tab" },
+    {"<leader><tab>d", "<cmd>tabclose<cr>", desc = "Close Tab" },
+    {"<leader><tab>o", "<cmd>tabonly<cr>", desc = "Close Other Tabs" },
+
     -- Windows
     { "<leader>w-",  "<C-W>s",  desc = "Split Window Below", remap = true },
     { "<leader>w|",  "<C-W>v",  desc = "Split Window Right", remap = true },

@@ -15,6 +15,7 @@ whichkey.setup({
 		{ "[", group = "prev" },
 		{ "]", group = "next" },
 		{ "g", group = "goto" },
+		{ "<leader><tab>", group = "tabs" },
 		{ "<leader>f", group = "files" },
         { "<leader>w", group = "windows", expand = function()
             return require("which-key.extras").expand.win()
