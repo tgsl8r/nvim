@@ -2,7 +2,7 @@
 -- vim.g.gruvbox_material_background = "soft"
 vim.g.gruvbox_flat_style = "dark"
 vim.g.gruvbox_italic_comments = false
-vim.g.gruvbox_italic_keywordss = false
+vim.g.gruvbox_italic_keywords = false
 
 -- Set colourscheme
 local colorscheme = "gruvbox-flat"
