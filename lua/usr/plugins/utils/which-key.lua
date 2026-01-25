@@ -27,6 +27,7 @@ whichkey.setup({
 		{ "<leader>c", group = "code" },
 		{ "<leader>g", group = "git" },
 		{ "<leader>gh", group = "hunk" },
+		{ "<leader>l", group = "list" },
 		{ "<leader>h", group = "history" },
 		{ "<leader>d", group = "debug" },
 		{ "<leader>dp", group = "profiling" },
