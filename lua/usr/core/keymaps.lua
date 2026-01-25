@@ -191,6 +191,8 @@ local bindings = {
     { "<leader>ll", "<cmd>Trouble lsp toggle<cr>", desc = "LSP references/definitions/... (Trouble)" },
     { "<leader>lL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
     { "<leader>lq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
+    { "<leader>lt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
+    { "<leader>lT", "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
     {
       "[q",
       function()
@@ -223,6 +225,8 @@ local bindings = {
     -- Comments
     { "gco",         "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", desc = "Add Comment Below" },
     { "gcO",         "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", desc = "Add Comment Above" },
+    { "]t", function() require("todo-comments").jump_next() end, desc = "Next Todo Comment" },
+    { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous Todo Comment" },
 
     -- Tests
     { "<leader>tn", function() require("neotest").run.run() end, desc = "Run nearest test" },
