@@ -69,6 +69,8 @@ local bindings = {
     { "<leader>bD",  "<cmd>:bd<cr>", desc = "Delete Buffer and Window" },
     { "[b",          "<cmd>bprevious<cr>", desc = "Prev Buffer" },
     { "]b",          "<cmd>bnext<cr>", desc = "Next Buffer" },
+    { "<S-h>",       "<cmd>bprevious<cr>", desc = "Prev Buffer" },
+    { "<S-l>",       "<cmd>bnext<cr>", desc = "Next Buffer" },
 
     -- search/show
     { "<leader>sg",  function() Snacks.picker.grep() end, desc = "Grep" },
