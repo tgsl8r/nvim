@@ -4,6 +4,12 @@ if not trouble_status then
 	return
 end
 
+local todo_comments_status, todo_comments = pcall(require, "todo-comments")
+if not todo_comments_status then
+	print("Couldn't load todo-comments")
+	return
+end
+
 trouble.setup({
     opts = {
         modes = {
@@ -13,3 +19,5 @@ trouble.setup({
         },
     },
 })
+
+todo_comments.setup()
