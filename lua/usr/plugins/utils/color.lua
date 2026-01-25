@@ -46,3 +46,14 @@ bamboo.setup({
         background = true, -- use background color for virtual text
     },
 })
+
+-- Set bamboo as default
+bamboo.load()
+
+-- Or set default colourscheme with vim --
+-- local colorscheme = "gruvbox-flat"
+-- local colorscheme_status, _ = pcall(vim.cmd.colorscheme, colorscheme)
+-- if not colorscheme_status then
+-- 	print("Colorscheme " .. colorscheme .. " not found!")
+-- 	return
+-- end
