@@ -6,6 +6,7 @@ vim.pack.add({
 	{ src = "git@github.com:eddyekofo94/gruvbox-flat.nvim" },
 	{ src = "git@github.com:folke/snacks.nvim" },
 	{ src = "git@github.com:folke/which-key.nvim" },
+	{ src = "git@github.com:folke/trouble.nvim" },
 	{ src = "git@github.com:akinsho/bufferline.nvim" },
   -- Treesitter
 	{ src = "git@github.com:nvim-treesitter/nvim-treesitter.git" },
