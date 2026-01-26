@@ -10,6 +10,7 @@ vim.opt.undofile = true -- enable persistent undo
 -- UI Stuff
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
+vim.opt.winborder = "rounded"
 vim.opt.cursorline = true -- highlight the current line
 vim.opt.laststatus = 3 -- Once global status line
 vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying messages
