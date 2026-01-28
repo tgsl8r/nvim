@@ -23,6 +23,7 @@ vim.pack.add({
     -- Editing
     { src = "git@github.com:nvim-mini/mini.ai" },
     { src = "git@github.com:nvim-mini/mini.surround" },
+    { src = "git@github.com:brianhuster/live-preview.nvim" },
 
 })
 
