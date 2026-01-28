@@ -39,6 +39,15 @@ local filetype_configs = {
         },
     },
 
+    -- Python files
+    {
+        pattern = "python",
+        opts = {},
+        keymaps = {
+            { "n", "<leader>r", ":!python3 %<CR>", "Run File (Python)" },
+        },
+    },
+
 }
 
 -- Create autocmds
