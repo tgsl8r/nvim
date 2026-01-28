@@ -15,5 +15,14 @@ for _, config in ipairs(filetype_configs) do
                     vim.opt_local[k] = v
                 end
             end
+
+            -- Set buffer-local keymaps
+            if config.keymaps then
+                for _, km in ipairs(config.keymaps) do
+                    local mode, keys, map, desc = unpack(km)
+                    vim.keymap.set(mode, keys, map, { buffer = true, desc = desc })
+                end
+            end
+        end,
     })
 end
