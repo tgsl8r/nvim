@@ -1,6 +1,14 @@
 -- filetypes.lua
 
 local filetype_configs = {
+    -- Makefiles
+    {
+        pattern = "make",
+        opts = {
+            expandtab = false
+        },
+        keymaps = {},
+    },
 
 }
 
