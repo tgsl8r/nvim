@@ -303,6 +303,8 @@ keymap({ "n", "x" }, "<leader>ur", function()
     Snacks.debug.run()
 end, { desc = "Run Lua" })
 
+-- save file
+keymap({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
 --- LINES ---
 -- better up/down
