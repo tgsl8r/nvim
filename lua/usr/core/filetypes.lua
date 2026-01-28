@@ -8,7 +8,7 @@ local filetype_configs = {
             wrap = true,
         },
         keymaps = {
-            { "n", "<leader>r", ":!tmux split-window -h 'glow -p %'<CR>", "Render File (Glow)" },
+            { "n", "<leader>r", ":runtime! plugin/livepreview.lua | livepreview start", "Render File (live)" },
         },
     },
 
