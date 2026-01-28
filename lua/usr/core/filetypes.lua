@@ -1,6 +1,17 @@
 -- filetypes.lua
 
 local filetype_configs = {
+    -- Markdown files
+    {
+        pattern = { "markdown", "markdown.mdx" },
+        opts = {
+            wrap = true,
+        },
+        keymaps = {
+            { "n", "<leader>r", ":!tmux split-window -h 'glow -p %'<CR>", "Render File (Glow)" },
+        },
+    },
+
     -- Shell files
     {
         pattern = { "sh", "bash", "zsh", "fish" },
