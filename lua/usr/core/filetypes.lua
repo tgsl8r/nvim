@@ -1,6 +1,15 @@
 -- filetypes.lua
 
 local filetype_configs = {
+    -- Shell files
+    {
+        pattern = { "sh", "bash", "zsh", "fish" },
+        opts = {},
+        keymaps = {
+            { "n", "<leader>r", ":!/bin/sh %<CR>", "Run File (shell)" },
+        },
+    },
+
     -- Makefiles
     {
         pattern = "make",
