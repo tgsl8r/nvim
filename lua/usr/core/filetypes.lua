@@ -21,6 +21,17 @@ local filetype_configs = {
         },
     },
 
+    -- HTML files
+    {
+        pattern = "html",
+        opts = {
+            wrap = true,
+        },
+        keymaps = {
+            { "n", "<leader>r", ":runtime! plugin/livepreview.lua | livepreview start", "Render File (live)" },
+        },
+    },
+
     -- Makefiles
     {
         pattern = "make",
