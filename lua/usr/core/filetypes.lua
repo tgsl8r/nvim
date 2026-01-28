@@ -48,6 +48,14 @@ local filetype_configs = {
         },
     },
 
+    -- JavaScript / TypeScript files
+    {
+        pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+        opts = {},
+        keymaps = {
+            { "n", "<leader>r", ":!node %<CR>", "Run File (Node)" },
+        },
+    },
 }
 
 -- Create autocmds
