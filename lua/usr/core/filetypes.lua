@@ -30,6 +30,15 @@ local filetype_configs = {
         keymaps = {},
     },
 
+    -- Lua files
+    {
+        pattern = "lua",
+        opts = {},
+        keymaps = {
+            { "n", "<leader>r", ":luafile %<CR>", "Run File (Lua)" },
+        },
+    },
+
 }
 
 -- Create autocmds
