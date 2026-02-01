@@ -58,4 +58,22 @@ local function path()
 
 	return vim.fn.fnamemodify(bufname, ":~")
 end
+
+Statusline = {}
+
+function Statusline.active()
+	return table.concat({
+		"[ ",
+		path(),
+		" ][ ",
+		git(),
+		" ]",
+		"%=",
+		"%y [%P %l:%c]",
+	})
+end
+
+function Statusline.inactive()
+	return " %t"
+end
 })
