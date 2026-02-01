@@ -43,4 +43,19 @@ local function git()
 		removed,
 	})
 end
+
+local function path()
+	local bufname = vim.api.nvim_buf_get_name(0)
+	if bufname == "" then
+		return ""
+	end
+
+	local git_status = vim.b.gitsigns_status_dict
+	local git_root = git_status and git_status.root
+	if git_root and bufname:sub(1, #git_root) == git_root then
+		return bufname:sub(#git_root + 2)
+	end
+
+	return vim.fn.fnamemodify(bufname, ":~")
+end
 })
