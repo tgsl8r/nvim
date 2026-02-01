@@ -82,10 +82,43 @@ local function path()
 end
 
 local function unsaved()
-    if vim.bo.modified then
-        return " %#String#%#StatusLine#"
-    end
-    return ""
+	if vim.bo.modified then
+		return " %#String#%#StatusLine#"
+	end
+	return ""
+end
+
+local function lsp()
+	local diags = vim.diagnostic.get(vim.api.nvim_get_current_buf())
+	local counts = { errors = 0, warnings = 0, info = 0, hints = 0 }
+	for _, diag in ipairs(diags) do
+		local s = diag.severity
+		if s == vim.diagnostic.severity.ERROR then
+			counts.errors = counts.errors + 1
+		elseif s == vim.diagnostic.severity.WARN then
+			counts.warnings = counts.warnings + 1
+		elseif s == vim.diagnostic.severity.INFO then
+			counts.info = counts.info + 1
+		elseif s == vim.diagnostic.severity.HINT then
+			counts.hints = counts.hints + 1
+		end
+	end
+
+	local parts = {vim.bo.filetype}
+	if counts.errors > 0 then
+		table.insert(parts, "%#DiagnosticError# " .. counts.errors .. "%#StatusLine#")
+	end
+	if counts.warnings > 0 then
+		table.insert(parts, "%#DiagnosticWarn# " .. counts.warnings .. "%#StatusLine#")
+	end
+	if counts.info > 0 then
+		table.insert(parts, "%#DiagnosticInfo# " .. counts.info .. "%#StatusLine#")
+	end
+	if counts.hints > 0 then
+		table.insert(parts, "%#DiagnosticHint# " .. counts.hints .. "%#StatusLine#")
+	end
+
+	return table.concat(parts, " ")
 end
 
 Statusline = {}
