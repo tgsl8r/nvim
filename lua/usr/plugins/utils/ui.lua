@@ -87,7 +87,6 @@ local function unsaved()
     end
     return ""
 end
-		unsaved(),
 
 Statusline = {}
 
@@ -95,6 +94,7 @@ function Statusline.active()
 	return table.concat({
 		"[ ",
 		path(),
+		unsaved(),
 		" ][ ",
 		git(),
 		" ]",
