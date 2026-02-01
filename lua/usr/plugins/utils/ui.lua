@@ -45,12 +45,22 @@ local function git()
 		reset = "%#StatusLine#",
 	}
 
+	local added_str = git_info.added and (colors.added .. symbols.added .. git_info.added .. colors.reset) or ""
+		"%#StatusLine#", -- ensure we start with normal statusline highlight
+	local changed_str = git_info.changed and (colors.changed .. symbols.changed .. git_info.changed .. colors.reset)
+		or ""
+	local removed_str = git_info.removed and (colors.removed .. symbols.removed .. git_info.removed .. colors.reset)
+		or ""
+
 	return table.concat({
 		" ",
 		head,
-		added,
-		changed,
-		removed,
+		" ",
+		added_str,
+		" ",
+		changed_str,
+		" ",
+		removed_str,
 	})
 end
 
