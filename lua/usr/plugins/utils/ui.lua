@@ -38,6 +38,12 @@ local function git()
 		removed = " ",
 	}
 
+	local colors = {
+		added = "%#GitSignsAdd#",
+		changed = "%#GitSignsChange#",
+		removed = "%#GitSignsDelete#",
+		reset = "%#StatusLine#",
+	}
 
 	return table.concat({
 		" ",
