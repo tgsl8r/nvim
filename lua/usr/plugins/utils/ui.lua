@@ -31,9 +31,13 @@ local function git()
 	end
 
 	local head = git_info.head
-	local added = git_info.added and (" +" .. git_info.added) or ""
-	local changed = git_info.changed and (" ~" .. git_info.changed) or ""
-	local removed = git_info.removed and (" -" .. git_info.removed) or ""
+
+	local symbols = {
+		added = " ",
+		changed = " ",
+		removed = " ",
+	}
+
 
 	return table.concat({
 		" ",
