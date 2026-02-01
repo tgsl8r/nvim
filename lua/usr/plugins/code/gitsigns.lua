@@ -57,3 +57,5 @@ gitsigns.setup({
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
     end,
 })
+
+vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = '#E49B0F', bg = '', bold = false })
