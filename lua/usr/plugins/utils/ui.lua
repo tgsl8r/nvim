@@ -73,9 +73,9 @@ local function path()
 	local git_status = vim.b.gitsigns_status_dict
 	local git_root = git_status and git_status.root
 	if git_root and bufname:sub(1, #git_root) == git_root then
-        local repo_name = vim.fn.fnamemodify(git_root, ":t")
-		local rel_path =  bufname:sub(#git_root + 2)
-        return repo_name .. "/" .. rel_path
+		local repo_name = vim.fn.fnamemodify(git_root, ":t")
+		local rel_path = bufname:sub(#git_root + 2)
+		return repo_name .. "/" .. rel_path
 	end
 
 	return vim.fn.fnamemodify(bufname, ":~")
