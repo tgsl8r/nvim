@@ -81,6 +81,14 @@ local function path()
 	return vim.fn.fnamemodify(bufname, ":~")
 end
 
+local function unsaved()
+    if vim.bo.modified then
+        return " %#String#%#StatusLine#"
+    end
+    return ""
+end
+		unsaved(),
+
 Statusline = {}
 
 function Statusline.active()
