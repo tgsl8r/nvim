@@ -21,7 +21,8 @@ blink.setup({
         default = { "lsp", "path", "snippets", "buffer" },
     },
     fuzzy = {
-        implementation = "prefer_rust_with_warning",
+        -- TODO: Sort out rust binary and switch to prefer_rust_with_warning
+        implementation = "prefer_rust",
     },
     keymap = {
         ["<Tab>"] = {
