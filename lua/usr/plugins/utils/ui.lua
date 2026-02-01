@@ -130,9 +130,11 @@ function Statusline.active()
 		unsaved(),
 		" ][ ",
 		git(),
-		" ]",
+		" ][ ",
+		lsp(),
+        " ]",
 		"%=",
-		"%y [%P %l:%c]",
+		"[%P %l:%c]",
 	})
 end
 
