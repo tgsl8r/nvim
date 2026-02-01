@@ -5,6 +5,7 @@ if not gitsigns_status then
 end
 
 gitsigns.setup({
+    -- TODO: Investigate intermittent display issues
     signs = {
         add = { text = "▎" },
         change = { text = "▎" },
@@ -21,6 +22,8 @@ gitsigns.setup({
         changedelete = { text = "▎" },
     },
     on_attach = function(buffer)
+        -- TODO: Move these keybinds to core/keymaps.lua
+
         local gs = package.loaded.gitsigns
 
         local function map(mode, l, r, desc)
