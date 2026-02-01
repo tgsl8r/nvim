@@ -4,9 +4,7 @@ if not live_preview_status then
 	return
 end
 
-vim.g.loaded_livepreview = 1
-
 require("livepreview.config").set({
-    browser = "chrome",
+    browser = "Google Chrome",
     picker = "snacks.picker",
 })

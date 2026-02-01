@@ -8,7 +8,7 @@ local filetype_configs = {
             wrap = true,
         },
         keymaps = {
-            { "n", "<leader>r", ":runtime! plugin/livepreview.lua | livepreview start", "Render File (live)" },
+            { "n", "<leader>r", ":LivePreview start<CR>", "Render File (live)" },
         },
     },
 
@@ -28,7 +28,7 @@ local filetype_configs = {
             wrap = true,
         },
         keymaps = {
-            { "n", "<leader>r", ":runtime! plugin/livepreview.lua | livepreview start", "Render File (live)" },
+            { "n", "<leader>r", ":LivePreview start<CR>", "Render File (live)" },
         },
     },
 
