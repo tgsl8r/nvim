@@ -6,7 +6,11 @@
 ------------------------------------------------------------
 
 vim.pack.add({
-    { src = "git@github.com:Saghen/blink.cmp" },
+    {
+        src = "git@github.com:Saghen/blink.cmp",
+        version = "v1.8.0",
+        build = "cargo build --release"
+    },
     { src = "git@github.com:rafamadriz/friendly-snippets" },
 })
 
