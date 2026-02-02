@@ -26,7 +26,7 @@ blink.setup({
     },
     fuzzy = {
         -- TODO: Sort out rust binary and switch to prefer_rust_with_warning
-        implementation = "prefer_rust",
+        implementation = "lua",
         prebuilt_binaries = {
             download = true,
             ignore_version_mismatch = true,
