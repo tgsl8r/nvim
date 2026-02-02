@@ -60,13 +60,8 @@ local function git()
 		"%#StatusLine#",
 		" ",
 		head,
-		" ",
-		added_str,
-		" ",
-		changed_str,
-		" ",
-		removed_str,
-	})
+        " ",
+	}) .. table.concat(changes, " ")
 end
 
 local function path()
