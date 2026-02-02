@@ -27,6 +27,10 @@ blink.setup({
     fuzzy = {
         -- TODO: Sort out rust binary and switch to prefer_rust_with_warning
         implementation = "prefer_rust",
+        prebuilt_binaries = {
+            download = true,
+            ignore_version_mismatch = true,
+        },
     },
     keymap = {
         ["<Tab>"] = {
