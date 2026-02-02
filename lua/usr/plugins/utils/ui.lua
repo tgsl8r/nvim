@@ -45,11 +45,16 @@ local function git()
 		reset = "%#StatusLine#",
 	}
 
-	local added_str = git_info.added and (colors.added .. symbols.added .. git_info.added .. colors.reset) or ""
-	local changed_str = git_info.changed and (colors.changed .. symbols.changed .. git_info.changed .. colors.reset)
-		or ""
-	local removed_str = git_info.removed and (colors.removed .. symbols.removed .. git_info.removed .. colors.reset)
-		or ""
+    local changes = {}
+    if git_info.added and git_info.added > 0 then
+	    table.insert(changes, colors.added .. symbols.added .. git_info.added .. colors.reset)
+    end
+    if git_info.changed and git_info.changed > 0 then
+	    table.insert(changes, colors.changed .. symbols.changed .. git_info.changed .. colors.reset)
+    end
+    if git_info.removed and git_info.removed > 0 then
+	    table.insert(changes, colors.removed .. symbols.removed .. git_info.removed .. colors.reset)
+    end
 
 	return table.concat({
 		"%#StatusLine#",
