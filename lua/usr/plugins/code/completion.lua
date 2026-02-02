@@ -9,7 +9,6 @@ vim.pack.add({
     {
         src = "git@github.com:Saghen/blink.cmp",
         version = "v1.8.0",
-        build = "cargo build --release"
     },
     { src = "git@github.com:rafamadriz/friendly-snippets" },
 })
@@ -25,10 +24,10 @@ blink.setup({
         default = { "lsp", "path", "snippets", "buffer" },
     },
     fuzzy = {
-        -- TODO: Sort out rust binary and switch to prefer_rust_with_warning
-        implementation = "lua",
+        implementation = "prefer_rust_with_warning",
         prebuilt_binaries = {
             download = true,
+            force_version = "v1.8.0",
             ignore_version_mismatch = true,
         },
     },
