@@ -155,7 +155,7 @@ local bindings = {
         "<leader>ds",
         function()
             local widgets = require("dap.ui.widgets")
-            widgets.centered_float(widgets.scopes, { border = "rounded" })
+            widgets.sidebar(widgets.scopes)
         end,
         desc = "DAP Scopes",
     },
