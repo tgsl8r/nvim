@@ -160,6 +160,30 @@ local bindings = {
         desc = "DAP Scopes",
     },
     {
+        "<leader>df",
+        function()
+            local widgets = require("dap.ui.widgets")
+            widgets.sidebar(widgets.frames)
+        end,
+        desc = "DAP Frames",
+    },
+    {
+        "<leader>de",
+        function()
+            local widgets = require("dap.ui.widgets")
+            widgets.sidebar(widgets.expression)
+        end,
+        desc = "DAP Expressions",
+    },
+    {
+        "<leader>dt",
+        function()
+            local widgets = require("dap.ui.widgets")
+            widgets.sidebar(widgets.threads)
+        end,
+        desc = "DAP Threads",
+    },
+    {
         "<leader>dh",
         function() require("dap.ui.widgets").hover(nil, { border = "rounded" }) end,
         desc = "DAP Hover",
