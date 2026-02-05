@@ -185,7 +185,7 @@ local bindings = {
             require("dap").step_out()
         end,
         desc = "Step Out",
-    },-
+    },
     {
         "<leader>ds",
         function()
