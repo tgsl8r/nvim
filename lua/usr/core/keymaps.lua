@@ -152,6 +152,41 @@ local bindings = {
 
     -- Debug
     {
+        "<leader>dt",
+        function()
+            require("dap").toggle_breakpoint()
+        end,
+        desc = "Toggle Breakpoint",
+    },
+    {
+        "<leader>dc",
+        function()
+            require("dap").continue()
+        end,
+        desc = "Continue",
+    },
+    {
+        "<leader>di",
+        function()
+            require("dap").step_into()
+        end,
+        desc = "Step Into",
+    },
+    {
+        "<leader>do",
+        function()
+            require("dap").step_over()
+        end,
+        desc = "Step Over",
+    },
+    {
+        "<leader>du",
+        function()
+            require("dap").step_out()
+        end,
+        desc = "Step Out",
+    },-
+    {
         "<leader>ds",
         function()
             local widgets = require("dap.ui.widgets")
