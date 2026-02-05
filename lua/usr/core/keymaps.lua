@@ -193,7 +193,7 @@ local bindings = {
         function() require("dap").repl.toggle(nil, "tab split") end,
         desc = "DAP REPL",
     },
-    -- TODO: Alt keybinds for below?
+    -- Trad debug keybinds
     { "<F4>",  "<CMD>DapTerminate<CR>",                       desc = "DAP Terminate" },
     { "<F5>",  "<CMD>DapContinue<CR>",                        desc = "DAP Continue" },
     { "<F6>",  function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
@@ -203,7 +203,7 @@ local bindings = {
     { "<F12>", "<CMD>DapStepOut<CR>",                         desc = "Step Out" },
     { "<F17>", function() require("dap").run_last() end,      desc = "Run Last" },
     {
-        "<F21>",
+        "<F8>",
         function()
             vim.ui.input(
                 { prompt = "Breakpoint condition: " },
