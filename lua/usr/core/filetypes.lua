@@ -67,6 +67,17 @@ local filetype_configs = {
             { "n", "<leader>r", ":!node %<CR>", "Run File (Node)" },
         },
     },
+    -- JSON files
+    {
+        pattern = "json",
+        opts = {},
+        keymaps = {
+            { "n", "<leader>cfj", "<cmd>%!jq<CR>", "Format Buffer (jq)" },
+            { "n", "<leader>cfjc", "<cmd>%!jq --compact-output<CR>", "Format Buffer, Compact (jq)" },
+            { "v", "<leader>cfj", ":'<,'>!jq<CR>", "Format Selection (jq)" },
+            { "v", "<leader>cfjc", ":'<,'>!jq --compact-output<CR>", "Format Selection, Compact (jq)" },
+        },
+    },
 }
 
 -- Create autocmds
