@@ -8,6 +8,7 @@
 local servers = {
     "clangd",
     "basedpyright",
+    "jq",
     "lua_ls",
     "ruff",
 }
