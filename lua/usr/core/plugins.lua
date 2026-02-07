@@ -24,6 +24,8 @@ vim.pack.add({
     { src = "git@github.com:nvim-mini/mini.ai" },
     { src = "git@github.com:nvim-mini/mini.surround" },
     { src = "git@github.com:brianhuster/live-preview.nvim" },
+    -- Utils
+    { src = "git@github.com:stevearc/overseer.nvim" },
 
 })
 
