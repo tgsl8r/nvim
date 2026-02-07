@@ -15,6 +15,7 @@ vim.pack.add({
     },
     { src = "git@github.com:rafamadriz/friendly-snippets" },
     { src = "git@github.com:MahanRahmati/blink-nerdfont.nvim" },
+    { src = "git@github.com:moyiz/blink-emoji.nvim" },
 })
 
 ------------------------------------------------------------
@@ -25,12 +26,16 @@ local blink = require("blink.cmp")
 
 blink.setup({
     sources = {
-        default = { "lsp", "path", "snippets", "buffer", "nerdfont" },
+        default = { "lsp", "path", "snippets", "buffer", "nerdfont", "emoji" },
     },
     providers = {
         nerdfont = {
           module = "blink-nerdfont",
           name = "Nerd Fonts",
+        },
+        emoji = {
+          module = "blink-emoji",
+          name = "Emoji",
         },
     },
     fuzzy = {
