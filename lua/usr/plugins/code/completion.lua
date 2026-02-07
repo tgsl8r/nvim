@@ -14,6 +14,7 @@ vim.pack.add({
         version = BLINK_RELEASE,
     },
     { src = "git@github.com:rafamadriz/friendly-snippets" },
+    { src = "git@github.com:MahanRahmati/blink-nerdfont.nvim" },
 })
 
 ------------------------------------------------------------
@@ -24,7 +25,13 @@ local blink = require("blink.cmp")
 
 blink.setup({
     sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "path", "snippets", "buffer", "nerdfont" },
+    },
+    providers = {
+        nerdfont = {
+          module = "blink-nerdfont",
+          name = "Nerd Fonts",
+        },
     },
     fuzzy = {
         implementation = "prefer_rust_with_warning",
