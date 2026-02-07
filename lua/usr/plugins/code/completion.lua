@@ -27,15 +27,15 @@ local blink = require("blink.cmp")
 blink.setup({
     sources = {
         default = { "lsp", "path", "snippets", "buffer", "nerdfont", "emoji" },
-    },
-    providers = {
-        nerdfont = {
-          module = "blink-nerdfont",
-          name = "Nerd Fonts",
-        },
-        emoji = {
-          module = "blink-emoji",
-          name = "Emoji",
+        providers = {
+            nerdfont = {
+                module = "blink-nerdfont",
+                name = "Nerd Fonts",
+            },
+            emoji = {
+                module = "blink-emoji",
+                name = "Emoji",
+            },
         },
     },
     fuzzy = {
