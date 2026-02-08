@@ -26,6 +26,7 @@ vim.pack.add({
     { src = "git@github.com:brianhuster/live-preview.nvim" },
     -- Utils
     { src = "git@github.com:stevearc/overseer.nvim" },
+    { src = "git@github.com:Civitasv/cmake-tools.nvim" },
 
 })
 
