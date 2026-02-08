@@ -6,11 +6,10 @@
 ------------------------------------------------------------
 
 vim.pack.add({
-    { src = "git@github.com:nvim-neotest/neotest" },
-    { src = "git@github.com:orjangj/neotest-ctest" },
-    { src = "git@github.com:nvim-neotest/neotest-python" },
+	{ src = "git@github.com:nvim-neotest/neotest" },
+	{ src = "git@github.com:orjangj/neotest-ctest" },
+	{ src = "git@github.com:nvim-neotest/neotest-python" },
 })
-
 
 ------------------------------------------------------------
 -- Config
@@ -19,9 +18,10 @@ vim.pack.add({
 local neotest = require("neotest")
 
 neotest.setup({
-  adapters = {
-    require("neotest-ctest")({
-      build_dir = "build",
-    }),
-  },
+	adapters = {
+		require("neotest-ctest")({
+			build_dir = "build",
+            ctest_command = "ctest --output-on-failure",
+		}),
+	},
 })
