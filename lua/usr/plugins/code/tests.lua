@@ -16,10 +16,11 @@ vim.pack.add({
 ------------------------------------------------------------
 
 local neotest = require("neotest")
+local ctest = require("neotest-ctest")
 
 neotest.setup({
 	adapters = {
-		require("neotest-ctest")({
+        ctest.setup({
 			build_dir = "build",
             ctest_command = "ctest --output-on-failure",
 		}),
