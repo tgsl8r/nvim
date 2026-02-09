@@ -20,6 +20,8 @@ whichkey.setup({
         { "<leader>w", group = "windows", expand = function()
             return require("which-key.extras").expand.win()
         end },
+		{ "<leader>wt", group = "terminal" },
+		{ "<leader>ws", group = "scratch" },
         { "<leader>b", group = "buffers", expand = function()
             return require("which-key.extras").expand.buf()
         end },
