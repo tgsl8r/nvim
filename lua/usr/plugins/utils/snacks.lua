@@ -5,9 +5,14 @@ if not snacks_status then
 end
 
 snacks.setup({
-	bigfile = { enabled = true },
+	bigfile = { enabled = false },
 	explorer = { enabled = true },
-	indent = { enabled = true },
+	indent = {
+        enabled = true,
+        animate = {
+            enabled = false
+        },
+    },
 	input = { enabled = true },
 	notifier = {
 		enabled = true,
@@ -18,6 +23,7 @@ snacks.setup({
 	scope = { enabled = true },
 	scroll = { enabled = true },
 	statuscolumn = { enabled = true },
+    terminal = { enabled = true },
 	words = { enabled = true },
 	styles = {
 		notification = {
