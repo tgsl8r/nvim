@@ -72,9 +72,9 @@ local filetype_configs = {
         pattern = "json",
         opts = {},
         keymaps = {
-            { "n", "<leader>jf", "<cmd>%!jq<CR>", "Format Buffer (jq)" },
+            { "n", "<leader>jf",  "<cmd>%!jq<CR>",                  "Format Buffer (jq)" },
             { "n", "<leader>jfc", "<cmd>%!jq --compact-output<CR>", "Format Buffer, Compact (jq)" },
-            { "v", "<leader>jf", ":'<,'>!jq<CR>", "Format Selection (jq)" },
+            { "v", "<leader>jf",  ":'<,'>!jq<CR>",                  "Format Selection (jq)" },
             { "v", "<leader>jfc", ":'<,'>!jq --compact-output<CR>", "Format Selection, Compact (jq)" },
         },
     },

@@ -109,7 +109,7 @@ local bindings = {
         desc = "Diagnostics {focused)"
     },
     { "<leader>cl", vim.diagnostic.setloclist,                                                                              desc = "Add Diag to List" },
-    { "<leader>ck", vim.lsp.buf.signature_help,                                                                             desc = "Signature Help" },         -- TODO: Insert mode bind for this
+    { "<leader>ck", vim.lsp.buf.signature_help,                                                                             desc = "Signature Help" }, -- TODO: Insert mode bind for this
     { "<leader>cK", vim.lsp.buf.hover,                                                                                      desc = "Hover" },
     { "]d",         diagnostic_goto(true),                                                                                  desc = "Next Diagnostic" },
     { "[d",         diagnostic_goto(false),                                                                                 desc = "Prev Diagnostic" },
