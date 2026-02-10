@@ -20,6 +20,18 @@ snacks.setup({
     },
     picker = {
         enabled = true,
+        win = {
+            input = {
+                keys = {
+                    ["<C-l>"] = { "focus_preview", mode = { "n", "i" } },
+                },
+            },
+            preview = {
+                keys = {
+                    ["<C-h>"] = { "focus_input", mode = { "n", "i" } },
+                },
+            },
+        },
     },
     quickfile = { enabled = true },
     scope = { enabled = true },
