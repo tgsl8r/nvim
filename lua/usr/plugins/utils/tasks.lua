@@ -1,7 +1,7 @@
-local overseer_status, overseer= pcall(require, "overseer")
+local overseer_status, overseer = pcall(require, "overseer")
 if not overseer_status then
-	print("Couldn't load Overseer")
-	return
+    print("Couldn't load Overseer")
+    return
 end
 
 overseer.setup()
