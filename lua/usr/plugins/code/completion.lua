@@ -46,6 +46,12 @@ blink.setup({
             ignore_version_mismatch = true,
         },
     },
+    signature = {
+        enabled = true,
+        trigger = {
+            show_on_insert = true,
+        },
+    },
     keymap = {
         ["<Tab>"] = {
             "snippet_forward",
