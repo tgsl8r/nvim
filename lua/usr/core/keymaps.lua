@@ -136,6 +136,42 @@ local bindings = {
     { "<leader>gp", function() Snacks.picker.gh_pr() end,                                                                   desc = "GitHub Pull Requests (open)" },
     { "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end,                                                  desc = "GitHub Pull Requests (all)" },
 
+    -- gitsigns
+    {
+        "]h",
+        function()
+            if vim.wo.diff then
+                vim.cmd.normal({ "]c", bang = true })
+            else
+                require("gitsigns").nav_hunk("next")
+            end
+        end,
+        desc = "Next Hunk"
+    },
+    {
+        "[h",
+        function()
+            if vim.wo.diff then
+                vim.cmd.normal({ "[c", bang = true })
+            else
+                require("gitsigns").nav_hunk("prev")
+            end
+        end,
+        desc = "Prev Hunk"
+    },
+    { "]H",          function() require("gitsigns").nav_hunk("last") end,            desc = "Last Hunk" },
+    { "[H",          function() require("gitsigns").nav_hunk("first") end,           desc = "First Hunk" },
+    { "<leader>ghs", function() require("gitsigns").stage_hunk() end,                desc = "Stage Hunk",               mode = { "n", "x" } },
+    { "<leader>ghr", function() require("gitsigns").reset_hunk() end,                desc = "Reset Hunk",               mode = { "n", "x" } },
+    { "<leader>ghS", function() require("gitsigns").stage_buffer() end,              desc = "Stage Buffer" },
+    { "<leader>ghR", function() require("gitsigns").reset_buffer() end,              desc = "Reset Buffer" },
+    { "<leader>ghp", function() require("gitsigns").preview_hunk_inline() end,       desc = "Preview Hunk Inline" },
+    { "<leader>ghb", function() require("gitsigns").blame_line({ full = true }) end, desc = "Blame Line" },
+    { "<leader>ghB", function() require("gitsigns").blame() end,                     desc = "Blame Buffer" },
+    { "<leader>ghd", function() require("gitsigns").diffthis() end,                    desc = "Diff This" },
+    { "<leader>ghD", function() require("gitsigns").diffthis("~") end,               desc = "Diff This ~" },
+    { "ih",          ":<C-U>Gitsigns select_hunk<CR>",                               desc = "GitSigns Select Hunk",     mode = { "o", "x" } },
+
     -- history
     { '<leader>h/', function() Snacks.picker.search_history() end,                                                          desc = "Search History" },
     { "<leader>hu", function() Snacks.picker.undo() end,                                                                    desc = "Undo History" },
