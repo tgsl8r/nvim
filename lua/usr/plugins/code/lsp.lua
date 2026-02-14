@@ -12,6 +12,10 @@ local servers = {
     "lua_ls",
     "pyright",
     "ruff",
+
+    "shellcheck",
+    "shfmt",
+    "bash-language-server"
 }
 
 ------------------------------------------------------------
