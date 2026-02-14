@@ -23,4 +23,4 @@ gitsigns.setup({
     },
 })
 
-vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = '#E49B0F', bg = '', bold = false })
+vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#E49B0F", bg = "", bold = false })
