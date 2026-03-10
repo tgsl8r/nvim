@@ -1,3 +1,5 @@
+-- ui.lua
+-- bufferline
 local bufferline_status, bufferline = pcall(require, "bufferline")
 if not bufferline_status then
     print("Couldn't load bufferline")
@@ -22,7 +24,17 @@ bufferline.setup({
     },
 })
 
--- status line helpers
+-- nvim-highlight-colors
+local highlight_color_status, highlight_color = pcall(require, "nvim-highlight-colors")
+if not highlight_color_status then
+    print("Couldn't load nvim-highlight-colors")
+    return
+end
+
+highlight_color.setup({})
+
+-- STATUS LINE --
+-- helpers
 
 local function git()
     local git_info = vim.b.gitsigns_status_dict
