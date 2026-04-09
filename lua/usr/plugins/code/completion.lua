@@ -31,6 +31,9 @@ blink.setup({
             nerdfont = {
                 module = "blink-nerdfont",
                 name = "Nerd Fonts",
+                opts = {
+                    trigger = "%"
+                },
             },
             emoji = {
                 module = "blink-emoji",
