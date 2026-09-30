@@ -399,7 +399,7 @@ keymap("n", "<leader>uI", function()
 end, { desc = "Inspect Tree" })
 
 -- Run lua
-keymap({ "n", "x" }, "<leader>ur", function()
+keymap({ "n", "x" }, "<leader>ul", function()
     Snacks.debug.run()
 end, { desc = "Run Lua" })
 
