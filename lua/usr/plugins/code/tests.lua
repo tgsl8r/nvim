@@ -9,6 +9,7 @@ vim.pack.add({
 	{ src = "git@github.com:nvim-neotest/neotest" },
 	{ src = "git@github.com:orjangj/neotest-ctest" },
 	{ src = "git@github.com:nvim-neotest/neotest-python" },
+	{ src = "git@github.com:nvim-neotest/neotest-jest" },
 })
 
 ------------------------------------------------------------
@@ -18,6 +19,7 @@ vim.pack.add({
 local neotest = require("neotest")
 local ctest = require("neotest-ctest")
 local neotest_python = require("neotest-python")
+local neotest_jest = require("neotest-jest")
 
 neotest.setup({
 	adapters = {
@@ -42,6 +44,12 @@ neotest.setup({
                     or string.match(file_path, ".-/test%-integration/test[%w_]+%.py$")
             end,
             pytest_discover_instances = false,
+        }),
+        neotest_jest({
+            env = { TEST_MODE = true },
+            isTestFile = function(file_path)
+                return string.match(file_path, "/tests?/.*[^/]%.test%.[jt]sx?$")
+            end,
         }),
 	},
     summary = {
