@@ -1,16 +1,12 @@
 -- pyright.lua
--- Kept for completion, hover and goto. ty owns the type diagnostics, so
--- pyright is told to report none rather than duplicating every error.
---
--- This has to go through pyright's own `ignore` setting: pyright serves
--- diagnostics over pull (textDocument/diagnostic), so overriding the
--- textDocument/publishDiagnostics handler silently does nothing.
+-- completion, hover, goto, etc.
 
 return {
     filetypes = { "python" },
     settings = {
         python = {
             analysis = {
+                -- No type diags (ty does it)
                 ignore = { "*" },
                 typeCheckingMode = "basic",
                 autoSearchPaths = true,
