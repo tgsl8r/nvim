@@ -15,7 +15,20 @@ local servers = {
 
     "shellcheck",
     "shfmt",
-    "bash-language-server"
+    "bash-language-server",
+
+    -- JavaScript / TypeScript
+    "vtsls",
+    "eslint-lsp",
+    "oxlint",
+    "prettierd",
+
+    -- Web
+    "css-lsp",
+    "html-lsp",
+    "json-lsp",
+    "emmet-language-server",
+    "tailwindcss-language-server",
 }
 
 ------------------------------------------------------------
@@ -27,6 +40,7 @@ vim.pack.add({
     { src = "git@github.com:williamboman/mason.nvim" },
     { src = "git@github.com:williamboman/mason-lspconfig.nvim" },
     { src = "git@github.com:WhoIsSethDaniel/mason-tool-installer.nvim" },
+    { src = "git@github.com:b0o/SchemaStore.nvim" },
 })
 
 ------------------------------------------------------------
