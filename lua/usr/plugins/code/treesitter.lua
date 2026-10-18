@@ -59,3 +59,12 @@ treesitter.setup({
 })
 
 treesitter_context.setup()
+
+-- Auto close/rename JSX, TSX and HTML tag pairs
+local autotag_status, autotag = pcall(require, "nvim-ts-autotag")
+if not autotag_status then
+    print("Couldn't load nvim-ts-autotag")
+    return
+end
+
+autotag.setup()
