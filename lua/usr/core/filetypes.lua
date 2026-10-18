@@ -24,6 +24,61 @@ local function source_action(kind)
     end
 end
 
+-- Apply automatic fixes from whichever linter LSPs are attached. Each gates
+-- itself on its own config file, so a project may have any, all or none of
+-- these.
+local lint_fix_kinds = {
+    eslint = "source.fixAll.eslint",
+    oxlint = "source.fixAll.oxc",
+    ruff = "source.fixAll.ruff",
+}
+
+local function lint_fix_all()
+    local ran = {}
+
+    for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+        local kind = lint_fix_kinds[client.name]
+        if kind then
+            local last = vim.api.nvim_buf_line_count(0)
+            local res = client:request_sync("textDocument/codeAction", {
+                textDocument = vim.lsp.util.make_text_document_params(0),
+                range = {
+                    start = { line = 0, character = 0 },
+                    ["end"] = { line = last, character = 0 },
+                },
+                context = { only = { kind }, diagnostics = {} },
+            }, 5000, 0)
+
+            for _, action in ipairs(res and res.result or {}) do
+                -- eslint and oxlint inline the edit; ruff hands back a bare
+                -- action that only carries its edit after codeAction/resolve
+                if not action.edit and not action.command then
+                    local resolved = client:request_sync("codeAction/resolve", action, 5000, 0)
+                    action = (resolved and resolved.result) or action
+                end
+
+                if action.edit then
+                    vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
+                    ran[#ran + 1] = client.name
+                elseif action.command then
+                    local command = action.command
+                    if type(command) == "string" then
+                        command = { command = command, arguments = action.arguments }
+                    end
+                    client:exec_cmd(command, { bufnr = 0 })
+                    ran[#ran + 1] = client.name
+                end
+            end
+        end
+    end
+
+    if #ran == 0 then
+        vim.notify("Nothing to fix (ruff, eslint, oxlint)", vim.log.levels.WARN)
+    else
+        vim.notify("Fixed with " .. table.concat(ran, ", "))
+    end
+end
+
 local filetype_configs = {
     -- Markdown files
     {
