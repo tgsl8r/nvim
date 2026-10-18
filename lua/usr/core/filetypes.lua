@@ -79,6 +79,15 @@ local function lint_fix_all()
     end
 end
 
+-- Run the current file with the right JS runtime
+local function run_js_file()
+    local ext = vim.fn.expand("%:e")
+    local cmd = (ext == "ts" or ext == "tsx" or ext == "mts" or ext == "cts")
+        and "npx tsx"
+        or "node"
+    vim.cmd("!" .. cmd .. " %")
+end
+
 local filetype_configs = {
     -- Markdown files
     {
