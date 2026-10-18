@@ -14,6 +14,16 @@ local function goto_source_definition()
     }, { bufnr = 0 })
 end
 
+-- Apply an LSP source action by kind, e.g. vtsls' source.addMissingImports.ts
+local function source_action(kind)
+    return function()
+        vim.lsp.buf.code_action({
+            context = { only = { kind }, diagnostics = {} },
+            apply = true,
+        })
+    end
+end
+
 local filetype_configs = {
     -- Markdown files
     {
