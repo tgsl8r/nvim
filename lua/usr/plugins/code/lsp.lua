@@ -10,8 +10,16 @@ local servers = {
     -- "basedpyright",
     "jq",
     "lua_ls",
+
+    -- Python: pyright drives IDE features, ty the type diagnostics,
+    -- ruff the lint diagnostics and fixes
     "pyright",
+    "ty",
     "ruff",
+    "black",
+    "isort",
+    "mypy",
+    "flake8",
 
     "shellcheck",
     "shfmt",
