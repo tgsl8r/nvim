@@ -1,5 +1,19 @@
 -- filetypes.lua
 
+-- vtsls' "go to the implementation, not the .d.ts" command
+local function goto_source_definition()
+    local client = vim.lsp.get_clients({ bufnr = 0, name = "vtsls" })[1]
+    if not client then
+        vim.notify("vtsls is not attached to this buffer", vim.log.levels.WARN)
+        return
+    end
+    local params = vim.lsp.util.make_position_params(0, client.offset_encoding)
+    client:exec_cmd({
+        command = "typescript.goToSourceDefinition",
+        arguments = { params.textDocument.uri, params.position },
+    }, { bufnr = 0 })
+end
+
 local filetype_configs = {
     -- Markdown files
     {
