@@ -152,7 +152,12 @@ local filetype_configs = {
         pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
         opts = {},
         keymaps = {
-            { "n", "<leader>r", ":!node %<CR>", "Run File (Node)" },
+            { "n", "<leader>r",  run_js_file,                                      "Run File (Node)" },
+            { "n", "<leader>ci", source_action("source.addMissingImports.ts"),     "Add Missing Imports" },
+            { "n", "<leader>cu", source_action("source.removeUnused.ts"),          "Remove Unused" },
+            { "n", "<leader>co", source_action("source.organizeImports"),          "Organize Imports" },
+            { "n", "<leader>cF", lint_fix_all,                                     "Lint Fix All" },
+            { "n", "<leader>cS", goto_source_definition,                           "Goto Source Definition" },
         },
     },
     -- JSON files
