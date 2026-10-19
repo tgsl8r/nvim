@@ -12,12 +12,7 @@ local servers = {
     "neocmakelsp",
     "gersemi",
 
-    -- "basedpyright",
-    "jq",
-    "lua_ls",
-
-    -- Python: pyright drives IDE features, ty the type diagnostics,
-    -- ruff the lint diagnostics and fixes
+    -- Python
     "pyright",
     "ty",
     "ruff",
@@ -25,10 +20,6 @@ local servers = {
     "isort",
     "mypy",
     "flake8",
-
-    "shellcheck",
-    "shfmt",
-    "bash-language-server",
 
     -- JavaScript / TypeScript
     "vtsls",
@@ -42,6 +33,16 @@ local servers = {
     "json-lsp",
     "emmet-language-server",
     "tailwindcss-language-server",
+
+    -- Shell / data
+    "shellcheck",
+    "shfmt",
+    "bash-language-server",
+    "jq",
+
+    -- Others : )
+    "lua_ls",
+
 }
 
 ------------------------------------------------------------
