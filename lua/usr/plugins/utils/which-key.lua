@@ -43,7 +43,5 @@ whichkey.setup({
         { "<leader>dp", group = "profiling" },
         { "<leader>t",  group = "neotest" },
         { "<leader>u",  group = "utils" },
-        { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action" },
-        { "<leader>cr", vim.lsp.buf.rename,      desc = "Rename Symbol" },
     },
 })

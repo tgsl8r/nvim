@@ -97,8 +97,14 @@ local bindings = {
 
     -- diags / code
     { "<leader>ca",         vim.lsp.buf.code_action,                                                desc = "Code Actions" },
-    { "<leader>cf",         function() vim.lsp.buf.format({ async = true }) end,                    desc = "Format Buffer" },
-    { "<leader>cr",         function() Snacks.rename.rename_file() end,                             desc = "Rename File" },
+    {
+        "<leader>cf",
+        function() require("conform").format({ async = true, lsp_format = "fallback" }) end,
+        desc = "Format Buffer",
+        mode = { "n", "x" }
+    },
+    { "<leader>cr",         vim.lsp.buf.rename,                                                     desc = "Rename Symbol" },
+    { "<leader>cR",         function() Snacks.rename.rename_file() end,                             desc = "Rename File" },
     { "<leader>cd",         vim.diagnostic.open_float,                                              desc = "Line Diagnostics" },
     {
         "<leader>cD",

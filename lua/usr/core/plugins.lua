@@ -21,6 +21,7 @@ vim.pack.add({
     { src = "git@github.com:nvim-treesitter/nvim-treesitter.git" },
     { src = "git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git" },
     { src = "git@github.com:nvim-treesitter/nvim-treesitter-context.git" },
+    { src = "git@github.com:windwp/nvim-ts-autotag" },
     -- Code
     { src = "git@github.com:lewis6991/gitsigns.nvim.git" },
     -- Editing

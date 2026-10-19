@@ -10,6 +10,7 @@ vim.pack.add({
 	{ src = "git@github.com:orjangj/neotest-ctest" },
 	{ src = "git@github.com:nvim-neotest/neotest-python" },
 	{ src = "git@github.com:nvim-neotest/neotest-jest" },
+	{ src = "git@github.com:marilari88/neotest-vitest" },
 })
 
 ------------------------------------------------------------
@@ -20,6 +21,9 @@ local neotest = require("neotest")
 local ctest = require("neotest-ctest")
 local neotest_python = require("neotest-python")
 local neotest_jest = require("neotest-jest")
+-- Gates itself on vitest appearing in package.json deps, so it won't
+-- collide with the jest adapter above
+local neotest_vitest = require("neotest-vitest")
 
 neotest.setup({
 	adapters = {
@@ -51,6 +55,7 @@ neotest.setup({
                 return string.match(file_path, "/tests?/.*[^/]%.test%.[jt]sx?$")
             end,
         }),
+        neotest_vitest,
 	},
     summary = {
         mappings = {
