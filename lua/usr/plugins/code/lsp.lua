@@ -6,7 +6,12 @@
 ------------------------------------------------------------
 
 local servers = {
+    -- C / C++ / CMake
     "clangd",
+    "clang-format",
+    "neocmakelsp",
+    "gersemi",
+
     -- "basedpyright",
     "jq",
     "lua_ls",
@@ -61,4 +66,18 @@ require('mason-lspconfig').setup()
 
 require('mason-tool-installer').setup({
     ensure_installed = servers
+})
+
+------------------------------------------------------------
+-- Overrides
+------------------------------------------------------------
+-- vim.lsp.config() is the top precedence tier and can't be clobbered by defaults
+
+vim.lsp.config("clangd", {
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+    },
 })
