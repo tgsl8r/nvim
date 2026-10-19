@@ -57,9 +57,7 @@ local filetype_configs = {
         pattern = "python",
         opts = {},
         keymaps = {
-            { "n", "<leader>r",  ":!python3 %<CR>",                                "Run File (Python)" },
-            { "n", "<leader>co", source_action("source.organizeImports.ruff"),     "Organize Imports" },
-            { "n", "<leader>cF", lint_fix_all,                                     "Lint Fix All" },
+            { "n", "<leader>r", ":!python3 %<CR>", "Run File (Python)" },
         },
     },
 
@@ -68,12 +66,10 @@ local filetype_configs = {
         pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
         opts = {},
         keymaps = {
-            { "n", "<leader>r",  run_js_file,                                      "Run File (Node)" },
-            { "n", "<leader>ci", source_action("source.addMissingImports.ts"),     "Add Missing Imports" },
-            { "n", "<leader>cu", source_action("source.removeUnused.ts"),          "Remove Unused" },
-            { "n", "<leader>co", source_action("source.organizeImports"),          "Organize Imports" },
-            { "n", "<leader>cF", lint_fix_all,                                     "Lint Fix All" },
-            { "n", "<leader>cS", goto_source_definition,                           "Goto Source Definition" },
+            { "n", "<leader>r",  actions.run_js_file,            "Run File (Node)" },
+            { "n", "<leader>ci", actions.add_missing_imports,    "Add Missing Imports" },
+            { "n", "<leader>cu", actions.remove_unused,          "Remove Unused" },
+            { "n", "<leader>cS", actions.goto_source_definition, "Goto Source Definition" },
         },
     },
     -- JSON files
