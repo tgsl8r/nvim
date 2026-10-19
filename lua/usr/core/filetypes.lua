@@ -143,7 +143,9 @@ local filetype_configs = {
         pattern = "python",
         opts = {},
         keymaps = {
-            { "n", "<leader>r", ":!python3 %<CR>", "Run File (Python)" },
+            { "n", "<leader>r",  ":!python3 %<CR>",                                "Run File (Python)" },
+            { "n", "<leader>co", source_action("source.organizeImports.ruff"),     "Organize Imports" },
+            { "n", "<leader>cF", lint_fix_all,                                     "Lint Fix All" },
         },
     },
 
