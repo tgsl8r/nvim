@@ -103,6 +103,8 @@ local bindings = {
         desc = "Format Buffer",
         mode = { "n", "x" }
     },
+    { "<leader>co",         function() require("usr.plugins.code.actions").organize_imports() end,  desc = "Organize Imports" },
+    { "<leader>cF",         function() require("usr.plugins.code.actions").fix_all() end,           desc = "Lint Fix All" },
     { "<leader>cr",         vim.lsp.buf.rename,                                                     desc = "Rename Symbol" },
     { "<leader>cR",         function() Snacks.rename.rename_file() end,                             desc = "Rename File" },
     { "<leader>cd",         vim.diagnostic.open_float,                                              desc = "Line Diagnostics" },

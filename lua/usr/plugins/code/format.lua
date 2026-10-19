@@ -34,11 +34,11 @@ require("conform").setup({
         yaml = web,
         graphql = web,
         markdown = web,
-        -- TODO: Do we want ruf_fix here?
-        python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
+        python = { "ruff_format" },
         sh = { "shfmt" },
         bash = { "shfmt" },
     },
-    -- Anything without a formatter above (python, lua, c, ...) formats via LSP
     default_format_opts = { lsp_format = "fallback" },
+    -- TODO: Format on save?
+    -- format_on_save = { timeout_ms = 1000, lsp_format = "fallback" },
 })
