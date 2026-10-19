@@ -4,6 +4,10 @@
       "rev": "1900f89",
       "src": "git@github.com:antoinemadec/FixCursorHold.nvim"
     },
+    "SchemaStore.nvim": {
+      "rev": "7fca30f2890a6acf9d21d194876c6ac960d92070",
+      "src": "git@github.com:b0o/SchemaStore.nvim"
+    },
     "bamboo.nvim": {
       "rev": "1309bc8",
       "src": "git@github.com:ribru17/bamboo.nvim"
@@ -28,6 +32,10 @@
     "cmake-tools.nvim": {
       "rev": "75a3589",
       "src": "git@github.com:Civitasv/cmake-tools.nvim"
+    },
+    "conform.nvim": {
+      "rev": "016802de402556da54c36bd7359b441266b01cdd",
+      "src": "git@github.com:stevearc/conform.nvim"
     },
     "friendly-snippets": {
       "rev": "572f566",
@@ -81,9 +89,17 @@
       "rev": "1677a4d",
       "src": "git@github.com:orjangj/neotest-ctest"
     },
+    "neotest-jest": {
+      "rev": "0e7979d51301dfae5ef839d771bd28cf593fde3f",
+      "src": "git@github.com:nvim-neotest/neotest-jest"
+    },
     "neotest-python": {
       "rev": "b0d3a86",
       "src": "git@github.com:nvim-neotest/neotest-python"
+    },
+    "neotest-vitest": {
+      "rev": "b0c265743c877058068dbc40d104ea5d40e6b257",
+      "src": "git@github.com:marilari88/neotest-vitest"
     },
     "nvim-bufbar": {
       "rev": "15cbde2",
@@ -96,6 +112,10 @@
     "nvim-highlight-colors": {
       "rev": "e2cb220",
       "src": "git@github.com:brenoprata10/nvim-highlight-colors"
+    },
+    "nvim-lint": {
+      "rev": "f6230a5c06ba59e6059c14637f1dbe29a7978b9b",
+      "src": "git@github.com:mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
       "rev": "ac04ec3",
@@ -116,6 +136,10 @@
     "nvim-treesitter-textobjects": {
       "rev": "5ca4aaa",
       "src": "git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git"
+    },
+    "nvim-ts-autotag": {
+      "rev": "d7220b55e16ed3c04e88086256def5d282429493",
+      "src": "git@github.com:windwp/nvim-ts-autotag"
     },
     "nvim-web-devicons": {
       "rev": "8033534",

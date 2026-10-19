@@ -1,1 +1,1 @@
-require("usr.lua.plugins.build")
+require("usr.plugins.build.cmake")

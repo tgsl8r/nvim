@@ -38,3 +38,5 @@ vim.pack.add({
 require("usr.plugins.utils")
 -- Language tools
 require("usr.plugins.code")
+-- Build systems
+require("usr.plugins.build")
