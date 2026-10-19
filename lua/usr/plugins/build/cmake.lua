@@ -5,7 +5,7 @@ if not cmake_tools_status then
     return
 end
 
-require(cmake_tools).setup({
+cmake_tools.setup({
     cmake_command = "cmake",
     cmake_build_directory = "build",
     cmake_build_type = "Debug",
