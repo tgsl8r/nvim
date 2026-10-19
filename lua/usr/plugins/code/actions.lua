@@ -1,13 +1,5 @@
 -- actions.lua
--- LSP source actions: lint fixes and import hygiene.
---
--- Deliberately separate from format.lua. Formatting must never change what the
--- code means; every action in here can. Ruff and biome happen to do both jobs
--- behind one binary, which is exactly why the split is made explicit here
--- rather than left to whichever tool a project happens to use.
---
--- Everything is synchronous and takes a bufnr, so these are safe to drive from
--- an autocmd (BufWritePre, say) if they ever want a trigger beyond a keymap.
+-- LSP source actions: lint fixes, etc
 
 local M = {}
 
@@ -82,8 +74,7 @@ function M.apply(family, opts)
             }, TIMEOUT, bufnr)
 
             for _, action in ipairs(res and res.result or {}) do
-                -- eslint and oxlint inline the edit; ruff hands back a bare
-                -- action that only carries one after codeAction/resolve
+                -- eslint and oxlint inline the edit; ruff hands back a bare action
                 if not action.edit and not action.command then
                     local resolved = client:request_sync("codeAction/resolve", action, TIMEOUT, bufnr)
                     action = (resolved and resolved.result) or action
