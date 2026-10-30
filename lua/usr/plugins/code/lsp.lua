@@ -82,3 +82,7 @@ vim.lsp.config("clangd", {
         "--completion-style=detailed",
     },
 })
+
+-- Turn off lsp-based highlighting for string literals in order to allow treesitter
+-- query to find and highlight SQL.
+vim.api.nvim_set_hl(0, "@lsp.type.string.python", {})
