@@ -54,6 +54,7 @@ treesitter.setup({
         "python",
         "c",
         "cpp",
+        "go",
     },
     auto_install = true,
 })

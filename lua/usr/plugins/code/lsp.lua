@@ -42,6 +42,7 @@ local servers = {
 
     -- Others : )
     "lua_ls",
+    "gopls",
 
 }
 
