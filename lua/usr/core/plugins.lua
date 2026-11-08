@@ -18,8 +18,8 @@ vim.pack.add({
     { src = "git@github.com:eddyekofo94/gruvbox-flat.nvim" },
     { src = "git@github.com:ribru17/bamboo.nvim" },
     -- Treesitter
-    { src = "git@github.com:nvim-treesitter/nvim-treesitter.git" },
-    { src = "git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git" },
+    { src = "git@github.com:nvim-treesitter/nvim-treesitter.git", version = "main" },
+    { src = "git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git", version = "main" },
     { src = "git@github.com:nvim-treesitter/nvim-treesitter-context.git" },
     { src = "git@github.com:windwp/nvim-ts-autotag" },
     -- Code
