@@ -15,7 +15,6 @@ vim.pack.add({
     { src = "git@github.com:akinsho/bufferline.nvim" },
     { src = "git@github.com:brenoprata10/nvim-highlight-colors" },
     -- Colourschemes
-    { src = "git@github.com:eddyekofo94/gruvbox-flat.nvim" },
     { src = "git@github.com:ribru17/bamboo.nvim" },
     -- Treesitter
     { src = "git@github.com:nvim-treesitter/nvim-treesitter.git", version = "main" },
