@@ -14,10 +14,10 @@ treesitter.setup()
 
 -- Replaces ensure_installed (async; already-installed parsers are skipped)
 treesitter.install({
-    "json", "markdown", "markdown_inline", "bash", "lua", "vim", "vimdoc", "query",
+    "asm", "csv", "json", "markdown", "markdown_inline", "bash", "lua", "vim", "vimdoc", "query",
     "dockerfile", "gitignore", "yaml", "toml", "html", "css", "scss",
-    "javascript", "typescript", "tsx", "jsdoc", "jsonc", "graphql", "regex",
-    "python", "c", "cpp", "go",
+    "javascript", "typescript", "tsx", "jsdoc", "graphql", "regex",
+    "python", "c", "cpp", "cmake", "make", "go", "rust",
 })
 
 -- Replaces highlight.enable, indent.enable, disable and auto_install
