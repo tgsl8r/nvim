@@ -3,15 +3,26 @@
 local actions = require("usr.plugins.code.actions")
 
 local filetype_configs = {
+    -- Previewable files
+    {
+        pattern = { "markdown", "html", "asciidoc", "svg" },
+        opts = {
+            wrap = true,
+        },
+        keymaps = {
+            { "n", "<leader>ps", "<cmd>LivePreview start<cr>", "Live preview: start" },
+            { "n", "<leader>pc", "<cmd>LivePreview close<cr>", "Live preview: close" },
+            { "n", "<leader>pp", "<cmd>LivePreview pick<cr>", "Live preview: pick file" },
+        },
+    },
+
     -- Markdown files
     {
         pattern = { "markdown", "markdown.mdx" },
         opts = {
             wrap = true,
         },
-        keymaps = {
-            { "n", "<leader>r", ":LivePreview start<CR>", "Render File (live)" },
-        },
+        keymaps = {},
     },
 
     -- Shell files
@@ -29,9 +40,7 @@ local filetype_configs = {
         opts = {
             wrap = true,
         },
-        keymaps = {
-            { "n", "<leader>r", ":LivePreview start<CR>", "Render File (live)" },
-        },
+        keymaps = {},
     },
 
     -- Makefiles
@@ -85,9 +94,12 @@ local filetype_configs = {
     },
 }
 
+local group = vim.api.nvim_create_augroup("filetype_configs", { clear = true })
+
 -- Create autocmds
 for _, config in ipairs(filetype_configs) do
     vim.api.nvim_create_autocmd("FileType", {
+        group = group,
         pattern = config.pattern,
         callback = function()
             -- Set buffer-local options
