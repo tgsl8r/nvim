@@ -422,12 +422,13 @@ keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = tru
 keymap({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 -- Shift Lines
-keymap("n", "<A-Down>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Shift lines Down" })
-keymap("n", "<A-Up>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Shift lines Up" })
+keymap("n", "<leader>mj", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Shift lines Down" })
+keymap("n", "<leader>mk", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Shift lines Up" })
+keymap("v", "<leader>mj", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Shift lines Down" })
+keymap("v", "<leader>mk", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Shift lines Up" })
+
 keymap("i", "<A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Shift lines Down" })
 keymap("i", "<A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Shift lines Up" })
-keymap("v", "<A-Down>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Shift lines Down" })
-keymap("v", "<A-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Shift lines Up" })
 
 -- Centre view on jumps
 keymap("n", "n", "nzz", defopts)
