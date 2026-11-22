@@ -21,6 +21,7 @@ local filetype_configs = {
         pattern = { "markdown", "markdown.mdx" },
         opts = {
             wrap = true,
+            conceallevel = 2,
         },
         keymaps = {},
     },
