@@ -406,11 +406,6 @@ keymap("n", "<leader>uI", function()
     vim.api.nvim_input("I")
 end, { desc = "Inspect Tree" })
 
--- Run lua
-keymap({ "n", "x" }, "<leader>rl", function()
-    Snacks.debug.run()
-end, { desc = "Run Lua" })
-
 -- save file
 keymap({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
