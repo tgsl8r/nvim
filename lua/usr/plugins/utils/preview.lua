@@ -5,6 +5,6 @@ if not live_preview_status then
 end
 
 require("livepreview.config").set({
-    browser = "Google Chrome",
+    browser = "firefox",
     picker = "snacks.picker",
 })
