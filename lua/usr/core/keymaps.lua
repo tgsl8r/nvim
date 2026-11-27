@@ -260,7 +260,7 @@ local bindings = {
         desc = "DAP Expressions",
     },
     {
-        "<leader>dt",
+        "<leader>dT",
         function()
             local widgets = require("dap.ui.widgets")
             widgets.sidebar(widgets.threads)
