@@ -36,7 +36,7 @@ whichkey.setup({
         { "<leader>s",  group = "search/show" },
         { "<leader>m",  group = "move" },
         { "<leader>p",  group = "preview" },
-        { "<leader>r",  group = "run" },
+        { "<leader>r",  group = "run/build" },
         { "<leader>c",  group = "code" },
         { "<leader>g",  group = "git" },
         { "<leader>gh", group = "hunk" },
