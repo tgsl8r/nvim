@@ -31,7 +31,7 @@ local filetype_configs = {
         pattern = { "sh", "bash", "zsh", "fish" },
         opts = {},
         keymaps = {
-            { "n", "<leader>r", ":!/bin/sh %<CR>", "Run File (shell)" },
+            { "n", "<leader>R", ":!/bin/sh %<CR>", "Run File (shell)" },
         },
     },
 
@@ -58,7 +58,7 @@ local filetype_configs = {
         pattern = "lua",
         opts = {},
         keymaps = {
-            { "n", "<leader>r", ":luafile %<CR>", "Run File (Lua)" },
+            { "n", "<leader>R", ":luafile %<CR>", "Run File (Lua)" },
         },
     },
 
@@ -67,7 +67,7 @@ local filetype_configs = {
         pattern = "python",
         opts = {},
         keymaps = {
-            { "n", "<leader>r", ":!python3 %<CR>", "Run File (Python)" },
+            { "n", "<leader>R", ":!python3 %<CR>", "Run File (Python)" },
         },
     },
 
@@ -76,7 +76,7 @@ local filetype_configs = {
         pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
         opts = {},
         keymaps = {
-            { "n", "<leader>r",  actions.run_js_file,            "Run File (Node)" },
+            { "n", "<leader>R",  actions.run_js_file,            "Run File (Node)" },
             { "n", "<leader>ci", actions.add_missing_imports,    "Add Missing Imports" },
             { "n", "<leader>cu", actions.remove_unused,          "Remove Unused" },
             { "n", "<leader>cS", actions.goto_source_definition, "Goto Source Definition" },
