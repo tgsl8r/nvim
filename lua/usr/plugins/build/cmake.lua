@@ -5,6 +5,18 @@ if not cmake_tools_status then
     return
 end
 
+-- gcc/clang diagnostics plus ld errors. The explicit %t is required: without
+-- it `type` is empty and every warning renders as an error. The trailing
+-- %-G drops everything else (ninja/make progress, command lines, snippets).
+local EFM = table.concat({
+    "%f:%l:%c: fatal %trror: %m",
+    "%f:%l:%c: %trror: %m",
+    "%f:%l:%c: %tarning: %m",
+    "%f:%l:%c: %tote: %m",
+    "%f:%l:(%.%#): %m", -- ld: file:line:(.text+0x5): undefined reference
+    "%-G%.%#",
+}, ",")
+
 cmake_tools.setup({
     cmake_command = "cmake",
     cmake_build_directory = "build",
@@ -16,7 +28,17 @@ cmake_tools.setup({
     },
 
     cmake_executor = {
-        name = "quickfix",
+        name = "overseer",
+        opts = {
+            new_task_opts = {
+                name = "cmake",
+                components = { "build_diagnostics" },
+                default_component_params = { errorformat = EFM },
+                strategy = { "jobstart", use_terminal = false },
+            },
+            -- Default opens the task list on every build; keep it in the background
+            on_new_task = function() end,
+        },
     },
 
     cmake_runner = {
