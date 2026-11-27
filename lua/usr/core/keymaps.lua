@@ -348,6 +348,22 @@ local bindings = {
     { "<leader>to", function() require("neotest").output_panel.toggle() end,       desc = "Toggle test output" },
     { "<leader>td", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug nearest test" },
 
+    -- Run / build (cmake-tools + overseer)
+    { "<leader>rb", "<cmd>CMakeBuild<cr>",              desc = "CMake Build" },
+    { "<leader>rB", "<cmd>CMakeBuild!<cr>",             desc = "CMake Clean + Build" },
+    { "<leader>rf", "<cmd>CMakeBuildCurrentFile<cr>",   desc = "CMake Build Current File" },
+    { "<leader>rr", "<cmd>CMakeRun<cr>",                desc = "CMake Run" },
+    { "<leader>rd", "<cmd>CMakeDebug<cr>",              desc = "CMake Debug" },
+    { "<leader>rg", "<cmd>CMakeGenerate<cr>",           desc = "CMake Generate" },
+    { "<leader>rc", "<cmd>CMakeClean<cr>",              desc = "CMake Clean" },
+    { "<leader>rt", "<cmd>CMakeSelectBuildTarget<cr>",  desc = "CMake Select Build Target" },
+    { "<leader>rT", "<cmd>CMakeSelectLaunchTarget<cr>", desc = "CMake Select Launch Target" },
+    { "<leader>ry", "<cmd>CMakeSelectBuildType<cr>",    desc = "CMake Select Build Type" },
+    { "<leader>ra", "<cmd>CMakeLaunchArgs<cr>",         desc = "CMake Launch Args" },
+    { "<leader>rs", "<cmd>CMakeStopExecutor<cr>",       desc = "CMake Stop Build" },
+    { "<leader>ro", "<cmd>OverseerToggle<cr>",          desc = "Overseer Task List" },
+    { "<leader>rO", "<cmd>OverseerRun<cr>",             desc = "Overseer Run Task" },
+
     -- Utils
     { "<leader>uK", "<cmd>norm! K<cr>",                                            desc = "Keywordprg" },
     { "<leader>ur", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",        desc = "Redraw / Clear hlsearch / Diff Update" },
