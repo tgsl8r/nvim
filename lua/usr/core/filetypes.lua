@@ -44,6 +44,16 @@ local filetype_configs = {
         keymaps = {},
     },
 
+    -- C / C++
+    {
+        pattern = { "c", "cpp" },
+        opts = {},
+        keymaps = {
+            { "n", "<leader>ch", "<cmd>LspClangdSwitchSourceHeader<cr>", "Switch Source/Header" },
+            { "n", "<leader>cI", "<cmd>LspClangdShowSymbolInfo<cr>",     "Symbol Info (clangd)" },
+        },
+    },
+
     -- Makefiles
     {
         pattern = "make",
