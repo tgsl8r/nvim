@@ -186,7 +186,7 @@ local bindings = {
     { "<leader>h:",  function() Snacks.picker.command_history() end,                 desc = "Command History" },
     { "<leader>hn",  function() Snacks.picker.notifications() end,                   desc = "Notification History" },
     { "<leader>un",  function() Snacks.notifier.show_history() end,                  desc = "Notification History" },
-    { "<leader>un",  function() Snacks.notifier.hide() end,                          desc = "Dismiss All Notifications" },
+    { "<leader>uN",  function() Snacks.notifier.hide() end,                          desc = "Dismiss All Notifications" },
 
     -- LSP
     { "gd",          function() Snacks.picker.lsp_definitions() end,                 desc = "Goto Definition" },
