@@ -27,10 +27,11 @@ local neotest_vitest = require("neotest-vitest")
 
 neotest.setup({
 	adapters = {
+        -- Finds the ctest dir (e.g. build/) itself; tests must already be built
         ctest.setup({
-			build_dir = "build",
-            ctest_command = "ctest --output-on-failure",
-		}),
+            extra_args = { "--output-on-failure" },
+            dap_adapter = "codelldb",
+        }),
         neotest_python({
             dap = { justMyCode = true },
             args = { "-s", "-v", "--log-level", "DEBUG" },
